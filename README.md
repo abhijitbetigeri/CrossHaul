@@ -40,6 +40,7 @@ July, everything else is today.**
 - [`docs/team.md`](docs/team.md) — the solo-founder case, dated hiring plan reconciled to the model, and the honest gaps
 - [`docs/vision.md`](docs/vision.md) — impact quantified (931 tons of food, ~4,740 t CO2e at year 3), the data moat, and the physical-AI arc correctly bounded
 - [`docs/elevenlabs-integration.md`](docs/elevenlabs-integration.md) — the voice layer: requirements, paste-ready agent prompt, fallback path
+- [`docs/physical-ai.md`](docs/physical-ai.md) — feasibility analysis: where embodied AI pays in the food chain, the transfer-economics arithmetic, and an honest negative finding on the training-data claim
 - *(voice layer — implementation in progress)*
 
 The git history is the evidence: this repository was created at 11:26 on 19 Sep 2026 and every
