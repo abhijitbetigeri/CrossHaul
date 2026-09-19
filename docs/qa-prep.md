@@ -51,6 +51,88 @@ correct.
 
 ---
 
+## 0b. The mechanics: "How does the data get in, and how do the branches and the supplier actually talk?"
+
+Asked by practitioners who are picturing the daily workflow. The instinct is to describe the
+architecture. Don't — describe **what a human does**, which is almost nothing.
+
+> Nobody types anything in. The POS syncs on its own. Invoices arrive by email or EDI and get parsed.
+> Counts happen the way they already happen, in whatever they use today.
+>
+> The branches don't contact each other at all — and that is the point. Today, rebalancing means one
+> manager texting another manager to ask what they're holding, which is exactly why it never happens.
+> CrossHaul already sees both positions, so it proposes the move. The donor manager gets one
+> notification with an accept or decline. That is the entire human workflow.
+>
+> The supplier is the same. We draft the purchase order, the owner approves it, and it goes out
+> through whatever channel they already use — their distributor portal or email. We do not need the
+> supplier to integrate with us on day one.
+
+**If asked how it works underneath:** each site is an agent on a coordination mesh. A shortage posts
+to a shared channel; anycast routes it to the sites holding surplus; nearest site and nearest-expiry
+lot claims it; a coordinator confirms. Only the net group shortage becomes an RFQ, suppliers bid, and
+the lowest landed cost becomes one PO. Say this **only if asked** — it is the engineering, and only
+one judge is scoring it.
+
+**Why we don't ask suppliers to integrate:** our value to the operator is that they *buy less*. That
+is structurally opposed to a distributor's incentive, so distributor partnerships are a year-three
+conversation and they happen through data, not through their sales force. Restaurant365 is at ~$132M
+ARR and their public Sysco page discloses no commercial arrangement at all.
+
+---
+
+## 0c. "Shouldn't you target McDonald's, Chipotle, Starbucks?"
+
+**This comes up constantly and it is wrong. Do not agree with the room to be agreeable.** It is
+well-meant advice that would point the company at the one segment where the problem is already
+solved.
+
+> That's the segment that already bought a solution. Chipotle, Dunkin' and Five Guys are named
+> Crunchtime customers. Crunchtime averages a hundred and seventy-six locations per brand — that is
+> who it is built for, and I would be selling them a less mature version of what they already run.
+>
+> Three more reasons it doesn't work. A McDonald's franchisee can't choose their supply chain stack —
+> the franchisor mandates it, so the person with the problem has no authority to buy. Those chains run
+> dedicated distribution with near-daily replenishment, so the cross-site surplus I exploit is much
+> smaller. And an enterprise sale is twelve to eighteen months through a buying committee, which a
+> company with no customers does not survive.
+>
+> The gap is the mid-market. Sixty-three percent of multi-concept companies run under twenty units.
+> The median operator has thirteen. They have the coordination problem and nobody sells them a fix at
+> a price they can pay. That is not where I'd start — it's where the market is.
+
+**The one-line version:** *Enterprise already has this. The mid-market doesn't. I'm going where the
+gap is, not where the logos are.*
+
+**Concede the true part:** a large logo would be worth more than its revenue as proof. That is a
+year-three conversation, entered from below once there are references — not the opening move.
+
+---
+
+## 0d. "Why are you building this?"
+
+**This one is yours and nobody can write it for you.** A rehearsed-sounding answer is worse than a
+rough honest one. What follows is only the shape.
+
+What is true and usable: you have shipped sixteen products in four months and *this* is the one you
+came back to. You won with it in July and returned to it in September — not with another prototype,
+but to build the commercial case. That pattern is the evidence; say the thing underneath it.
+
+The strongest structure is three beats, under thirty seconds:
+
+1. **The pull** — what made this the one you returned to. Genuine, specific, yours.
+2. **The fit** — you are a distributed-systems person, and this is a distributed-systems problem
+   wearing a restaurant costume. Sites holding inconsistent local state, no shared picture, no
+   mechanism to act on one. That is the problem you actually trained on.
+3. **The stake** — a hundred and sixty-two billion dollars of food is thrown away every year in US
+   restaurants alone, and a meaningful slice of it is thrown away because two buildings two miles
+   apart cannot see each other.
+
+**Do not** say "I saw a gap in the market" or "I've always been passionate about supply chain."
+Investors have heard both several thousand times, and neither is you.
+
+---
+
 ## 1. The ten most likely questions
 
 Ranked by likelihood × damage if fumbled.
