@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CrossHaul · Voice Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#17120d; --bg2:#1e1811; --panel:#221a12; --panel2:#2a2016;
+    --line:#3a2c1e; --line-soft:#2f2418;
+    --cream:#f4ead9; --muted:#b6a288; --faint:#8a7860;
+    --tomato:#e5533d; --tomato-soft:#f0a493;
+    --basil:#93b061; --amber:#e2a838; --gold:#d8b26a;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --sans:'IBM Plex Sans',system-ui,sans-serif;
+    --serif:'Fraunces',Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-size:15px;
+    line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;position:relative}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(120% 80% at 85% -10%,rgba(229,83,61,.10),transparent 60%),
+               radial-gradient(90% 70% at 0% 110%,rgba(147,176,97,.07),transparent 55%)}
+  .wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:40px 26px 140px}
+
+  header{padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:30px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .mark{width:46px;height:46px;border-radius:12px;flex:none;
+    background:linear-gradient(150deg,var(--tomato),#b83a28);display:grid;place-items:center;
+    box-shadow:0 6px 20px -6px rgba(229,83,61,.6),inset 0 1px 0 rgba(255,255,255,.25);
+    font-family:var(--serif);font-weight:600;font-size:24px;color:#fff}
+  h1{font-family:var(--serif);font-weight:600;font-size:29px;letter-spacing:-.01em;line-height:1}
+  .sub{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--faint);margin-top:6px}
+
+  .lede{color:var(--muted);font-size:16px;margin-bottom:30px;max-width:64ch}
+  .lede b{color:var(--cream);font-weight:600}
+
+  .call{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);
+    border-radius:18px;overflow:hidden;margin-bottom:22px}
+  .call .head{display:flex;align-items:center;gap:11px;padding:15px 22px;
+    border-bottom:1px solid var(--line-soft);font-family:var(--mono);font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .pulse{width:8px;height:8px;border-radius:50%;background:var(--basil);flex:none;
+    box-shadow:0 0 0 0 rgba(147,176,97,.6);animation:p 2.2s infinite}
+  @keyframes p{70%{box-shadow:0 0 0 9px rgba(147,176,97,0)}100%{box-shadow:0 0 0 0 rgba(147,176,97,0)}}
+  .call .body{padding:24px 22px}
+  .said{font-family:var(--serif);font-size:21px;line-height:1.5;letter-spacing:-.005em}
+  .said em{font-style:normal;color:var(--tomato-soft)}
+
+  .ledger{display:grid;grid-template-columns:1fr auto;gap:0 18px;margin-top:22px;
+    padding-top:20px;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:13px}
+  .ledger dt{padding:7px 0;color:var(--muted)}
+  .ledger dd{padding:7px 0;text-align:right;font-weight:600}
+  .ledger .good{color:var(--basil)}
+  .ledger .tot{border-top:1px solid var(--line-soft);margin-top:6px;padding-top:12px;color:var(--cream)}
+
+  .actions{display:flex;gap:11px;flex-wrap:wrap;margin-bottom:34px}
+  button{appearance:none;cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+    text-transform:uppercase;font-weight:600;border:0;border-radius:11px;padding:14px 20px;
+    transition:.15s;display:inline-flex;align-items:center;gap:9px}
+  .primary{background:var(--basil);color:#1a130d}
+  .primary:hover{transform:translateY(-1px)}
+  .ghost{background:var(--panel);color:var(--muted);border:1px solid var(--line)}
+  .ghost:hover{border-color:var(--tomato-soft);color:var(--cream)}
+  button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+  .note{font-family:var(--mono);font-size:11.5px;color:var(--faint);line-height:1.75;
+    border-left:2px solid var(--line);padding-left:15px}
+  .note b{color:var(--muted);font-weight:600}
+  .note code{color:var(--gold);font-size:11px}
+
+  #status{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-bottom:22px;min-height:1.4em}
+  #status.warn{color:var(--amber)}
+  footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line-soft);
+    font-family:var(--mono);font-size:11px;color:var(--faint)}
+  footer a{color:var(--basil);text-decoration:none}
+  @media (max-width:560px){.said{font-size:18px}h1{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="mark">C</div>
+      <div>
+        <h1>CrossHaul · Voice Console</h1>
+        <div class="sub">Common Operating Environment — approval channel</div>
+      </div>
+    </div>
+  </header>
+
+  <p class="lede">
+    Site managers are on their feet for ten hours. They do not open dashboards — which is the real
+    failure mode of this category, not features. So CrossHaul <b>calls them</b>, states the decision
+    it already made, and takes "yes" for an answer.
+  </p>
+
+  <div class="call">
+    <div class="head"><span class="pulse"></span> Incoming · CrossHaul → Owner · Trattoria Verde</div>
+    <div class="body">
+      <p class="said">
+        "Downtown is <em>thirty-six kilos short</em> on tomatoes for the weekend. I moved ten from
+        Marina — that lot expires in two days — and drafted a purchase order for the remaining
+        twenty-six at two-oh-five a kilo from Bay Foods. <em>Fifty-three thirty.</em>
+        Want me to send it?"
+      </p>
+
+      <dl class="ledger">
+        <dt>Purchase avoided — 10&nbsp;kg moved from Marina</dt><dd class="good">+$20.50</dd>
+        <dt>Spoilage avoided — Marina lot, 2 days to expiry</dt><dd class="good">+$20.50</dd>
+        <dt>RFQ won — Bay Foods $2.05 vs incumbent $2.20</dt><dd class="good">+$3.90</dd>
+        <dt>Courier leg — 10&nbsp;kg, intra-city</dt><dd>−$4.00</dd>
+        <dt class="tot">Net, this decision</dt><dd class="tot good">+$40.90</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="primary" id="playBtn">▶ Play the call</button>
+    <button class="ghost" id="talkBtn">Talk to CrossHaul</button>
+  </div>
+  <div id="status"></div>
+
+  <p class="note">
+    <b>Two paths, deliberately.</b> The recorded clip plays from disk — identical every rehearsal and
+    immune to venue wifi, which is what the stage needs. The live agent is what the judges' table
+    needs: ten concurrent calls, so several people can interrogate it at once.<br><br>
+    <b>Setup:</b> create the agent at elevenlabs.io, set <b>Authentication → public</b>, allowlist this
+    domain, then replace <code>AGENT_ID_HERE</code> below. No API key ever reaches the browser — the
+    agent id is public by design. Render the clip with <code>voice/render_fallback.sh</code>.
+  </p>
+
+  <footer>
+    CrossHaul — Dream AI Hackathon 2026 ·
+    <a href="https://github.com/abhijitbetigeri/CrossHaul">github.com/abhijitbetigeri/CrossHaul</a>
+  </footer>
+</div>
+
+<!-- ElevenLabs conversational agent. Replace AGENT_ID_HERE; nothing else changes. -->
+<elevenlabs-convai agent-id="AGENT_ID_HERE" style="display:none"></elevenlabs-convai>
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
+<script>
+const status = document.getElementById("status");
+const widget = document.querySelector("elevenlabs-convai");
+const configured = widget.getAttribute("agent-id") !== "AGENT_ID_HERE";
+
+// The recorded clip. Rendered by voice/render_fallback.sh; absent until then.
+const CLIP = "crosshaul-approval.mp3";
+const audio = new Audio(CLIP);
+const playBtn = document.getElementById("playBtn");
+const talkBtn = document.getElementById("talkBtn");
+
+audio.addEventListener("error", () => {
+  playBtn.disabled = true;
+  status.className = "warn";
+  status.textContent = "No recorded clip yet — run voice/render_fallback.sh to create it.";
+});
+playBtn.addEventListener("click", () => {
+  audio.currentTime = 0;
+  audio.play().then(() => { status.className = ""; status.textContent = "Playing recorded clip."; })
+              .catch(() => { status.className = "warn"; status.textContent = "Clip missing."; });
+});
+
+if (configured) {
+  widget.style.display = "";
+  talkBtn.addEventListener("click", () => {
+    status.className = "";
+    status.textContent = "Live agent open — use the launcher.";
+  });
+} else {
+  talkBtn.disabled = true;
+  status.className = "warn";
+  status.textContent = "Live agent not configured — paste your ElevenLabs agent id into this page.";
+}
+</script>
+</body>
+</html>

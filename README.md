@@ -66,8 +66,8 @@ July, everything else is today.**
 - [`docs/physical-ai.md`](docs/physical-ai.md) — feasibility analysis: where embodied AI pays across the chain, the transfer-economics arithmetic, and an honest negative finding on the training-data claim
 - [`docs/team.md`](docs/team.md) — the solo-founder case, dated hiring plan reconciled to the model, and the honest gaps
 - [`docs/vision.md`](docs/vision.md) — impact quantified (931 tons of food, ~4,740 t CO2e at year 3) and the physical-AI arc correctly bounded
-- [`docs/elevenlabs-integration.md`](docs/elevenlabs-integration.md) — the voice layer: requirements, paste-ready agent prompt, fallback path
-- *(voice layer — implementation in progress)*
+- [`docs/elevenlabs-integration.md`](docs/elevenlabs-integration.md) + [`voice/`](voice/) — the voice approval channel: a console page with an embedded ElevenLabs agent, the paste-ready agent configuration, and a stdlib script that renders the stage fallback clip
+- [`inference/router.py`](inference/router.py) — routing by reasoning complexity across Nebius Token Factory and Claude. Removes 83% of inference cost while the decision that spends money stays on the frontier model. Runs live against Nebius.
 
 The git history is the evidence: this repository was created at 11:26 on 19 Sep 2026 and every
 commit is timestamped that day.
@@ -115,6 +115,8 @@ docs/team.md               solo-founder case and hiring plan                    
 docs/vision.md             impact quantified, physical-AI arc bounded                  ← today
 docs/elevenlabs-integration.md  the voice layer                                        ← today
 model/financial_model.py   the model — monthly cohort, all inputs at the top           ← today
+inference/router.py        inference routing — Nebius + Claude, with the cost model      ← today
+voice/                     the ElevenLabs approval channel — console, prompt, fallback   ← today
 product/                   the July system, vendored — see product/PROVENANCE.md       ← pre-existing
 ```
 
