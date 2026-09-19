@@ -645,12 +645,17 @@ categories). Only if both fail is the segment wrong.
 
 ### 5. $249 is the wrong price
 
-**The claim.** A 25% premium over
-[MarketMan's $199](https://restaurantinventorytools.com/restaurant-inventory-software-cost/) is
-supported because Mise sells decisions rather than records.
+**The claim.** $249 is defensible at *parity* with
+[MarketMan's Starter tier](https://www.marketman.com/pricing) (also $249, free setup), because Mise
+delivers at their entry price the inter-location capability they gate to Enterprise from $449.
 
-**Test.** The explicit price question in every readout from week 4. If more than half object, the
-premium is not real.
+*(Corrected 19 Sep 2026: this falsifier originally read "a 25% premium over MarketMan's $199."
+MarketMan's live pricing has moved and there is no premium to defend — which makes the position
+stronger, not weaker. Re-check the live page before pitching; a stale competitor price is a
+self-inflicted wound.)*
+
+**Test.** The explicit price question in every readout from week 4. If more than half object at
+parity pricing, the problem is the value claim, not the premium.
 
 **Response if false.** Not a discount — a narrower SKU. Transfers-only at $149 per location per
 month, sitting alongside whatever inventory system they already run. Lower ARPU, but it preserves

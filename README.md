@@ -41,6 +41,7 @@ July, everything else is today.**
 - [`docs/vision.md`](docs/vision.md) — impact quantified (931 tons of food, ~4,740 t CO2e at year 3), the data moat, and the physical-AI arc correctly bounded
 - [`docs/elevenlabs-integration.md`](docs/elevenlabs-integration.md) — the voice layer: requirements, paste-ready agent prompt, fallback path
 - [`docs/physical-ai.md`](docs/physical-ai.md) — feasibility analysis: where embodied AI pays in the food chain, the transfer-economics arithmetic, and an honest negative finding on the training-data claim
+- [`docs/competition.md`](docs/competition.md) — the "don't they already have this?" objection: capability matrix, adoption reality, rebuttal script, and seven ranked threats
 - *(voice layer — implementation in progress)*
 
 The git history is the evidence: this repository was created at 11:26 on 19 Sep 2026 and every
@@ -64,11 +65,15 @@ Full working: [docs/market-research.md](docs/market-research.md)
 | Category TAM | $4.55B (2025) → $9.18B (2030), 15% CAGR |
 | US SAM | ~$672M/yr — 225,000 multi-unit locations |
 
-**Why an incumbent hasn't already won this.** MarketMan and Restaurant365 both ship inter-location
-transfers — but as *bookkeeping*: a human notices the imbalance and the software records the move.
-Mise makes the decision itself, from a continuous per-SKU forecast. And MarketMan gates transfers
-behind its Enterprise tier, so the 3–20 unit operator either pays enterprise pricing or goes
-without. That gap is the beachhead.
+**Why an incumbent hasn't already won this.** MarketMan, Restaurant365 and Crunchtime all ship
+inter-location transfers — but as *bookkeeping*: a human notices the imbalance and the software
+records the move. Every transfer verb in Crunchtime's own training catalogue is a human one —
+*create*, *request*, *process*, *reconcile*. None is *review a proposed transfer*. Mise makes the
+decision itself.
+
+And the capability is priced out of the segment that needs it: MarketMan's Starter tier is $249 per
+location per month, but inter-location transfers arrive with Enterprise, from $449. Mise is $249 —
+their entry price for the thing they charge ~1.8× for. That gap is the beachhead.
 
 ---
 

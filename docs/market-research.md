@@ -84,7 +84,7 @@ a coordination problem they have never had before — and the tool that solves i
 |---|---|---|---|
 | **Restaurant365** | Category leader — $445M raised, $1B valuation, ~$132M ARR, 40K customers | Enterprise, custom | [Latka](https://getlatka.com/companies/restaurant365) |
 | **Crunchtime** | Built for 50+ location chains | Custom, thousands/mo | [RIT](https://restaurantinventorytools.com/best-inventory-software-multi-location-restaurants/) |
-| **MarketMan** | Mid-market incumbent | $199/loc/mo + $500 setup | [RIT](https://restaurantinventorytools.com/restaurant-inventory-software-cost/) |
+| **MarketMan** | Mid-market incumbent | Starter $249 / Growth $299 / Enterprise from $449 per loc/mo, free setup | [MarketMan](https://www.marketman.com/pricing) (checked 19 Sep 2026) |
 | **Square × MarketMan** | Entry tier | $99/loc/mo | [Square](https://squareup.com/us/en/inventory-management/restaurants) |
 
 Typical category pricing runs [$100–$500 per location per month](https://restaurantinventorytools.com/restaurant-inventory-software-cost/).
@@ -109,23 +109,39 @@ The real difference is **who decides**:
 | When | After someone notices | Before anyone notices |
 | Data model | Human-initiated transactions, periodic counts | Continuous per-SKU demand forecast |
 
-Their feature is **bookkeeping for a decision already made.** Mise *is* the decision. That framing
-is defensible under questioning, and it explains why copying it is not a feature ticket — it
-requires a forecasting substrate their architecture doesn't have.
+Their feature is **bookkeeping for a decision already made.** Mise *is* the decision.
 
-**Second gap: the Enterprise gate.** MarketMan restricts transfers to Enterprise. A six-location
-operator therefore cannot buy the capability at mid-market pricing from the mid-market incumbent.
-That is a pricing-shaped hole in exactly the beachhead segment.
+**State the architecture argument carefully — the obvious version is false.** "Their
+transaction-and-periodic-count data model cannot produce a per-SKU forecast" will be contradicted by
+anyone who knows the category: depleting theoretical on-hand from POS sales against recipe cards is
+standard, and is exactly what actual-vs-theoretical variance reporting does. The defensible version
+is three-part:
+
+1. **No confidence interval on on-hand.** Theoretical depletion yields a point estimate. Deciding to
+   physically move stock on it requires knowing how wrong that estimate might be.
+2. **No write-side network object.** There is no franchise-level position to optimise against. Each
+   location is its own ledger and a transfer is a transaction between two of them, not the solution
+   to a network problem.
+3. **No above-store workflow surface.** Nothing in the product asks a regional manager to approve a
+   move that nobody requested.
+
+**Second gap: the Enterprise gate.** MarketMan's live pricing is **Starter $249 / Growth $299 /
+Enterprise from $449** per location per month with free setup, and inter-location transfers arrive
+with the Enterprise "HQ feature" ([MarketMan pricing](https://www.marketman.com/pricing), checked 19
+Sep 2026). A six-location operator pays roughly **1.8× the entry price** to get the capability at
+all. That is a pricing-shaped hole in exactly the beachhead segment.
 
 ---
 
 ## 4. Pricing *(constructed)*
 
-**$249 / location / month.**
+**$249 / location / month — at exact parity with MarketMan's Starter tier.**
 
-Positioned deliberately: a 25% premium over MarketMan's $199 mid-market tier, and far below the
-enterprise tier that currently gates automated transfers. The premium is defensible because the
-product sells decisions rather than record-keeping.
+This is a stronger position than the premium it was first framed as. MarketMan prices Starter at
+$249 and gates inter-location transfers to Enterprise, from $449. Mise therefore delivers **at their
+entry price the capability they charge roughly 1.8× for** — and delivers it as a decision rather
+than a record. There is no premium to justify, which removes the hardest question from the pricing
+conversation.
 
 ### The ROI argument
 

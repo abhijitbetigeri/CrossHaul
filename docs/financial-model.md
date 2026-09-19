@@ -74,7 +74,7 @@ out loud; being the one who caps their own LTV buys credibility for everything e
 
 | Assumption | Value | Defence |
 |---|---|---|
-| Price | $249/location/month | 25% over MarketMan's $199 mid-market tier, far under enterprise. Selling decisions, not bookkeeping. |
+| Price | $249/location/month | Exact parity with MarketMan's Starter tier ($249), while they gate inter-location transfers to Enterprise (from $449). Same entry price, the capability they charge ~1.8× for. |
 | Avg group size | 6.0 → 6.5 locations | The beachhead is 3–20 units; [median multi-concept operator runs 13](https://restaurantchains.net/multi-concept-restaurant-operators-emerging-chains/), so 6 is the small end. Conservative. |
 | Monthly churn | 1.5% → 1.0% | Multi-unit operators are more durable than single sites, but restaurants close. Not a 0.5% enterprise number. |
 | Gross margin | 76% → 84% | COGS is inference, hosting, payments and customer success at $60→$40/location/month. Vertical SaaS with real support load, not a pure API business. |
