@@ -182,3 +182,60 @@ day.
 The July system proved agents can coordinate a restock. It had no answer for the only question an
 operator actually asks: what is that worth, and what does it cost me. That is what today built.
 ```
+
+## Form field addendum: the multi-agent coordination, in detail
+
+Use this in place of point 1 in "AI & Hackathon Build" if there is room, or as the answer if asked
+to elaborate.
+
+```
+MULTI-AGENT COORDINATION — no central planner
+
+Every branch and every supplier is a node on a coordination mesh, not a row in one planner's
+database. Nodes hold presence and talk over shared channels: #demand, #rebalance, #procurement,
+#promotions, #decisions. The reference franchise runs three branch nodes, a rebalance coordinator,
+a procurement node and two supplier bidders.
+
+One cycle runs like this.
+
+1. FORECAST. Each branch node predicts next-7-day demand per menu item, then explodes it through
+   the recipe bill-of-materials into ingredient requirements, and derives par levels, reorder
+   points and days-of-cover from its own burn rate.
+
+2. POST. Shortages and surpluses post to #rebalance as stock alerts — keyed off days-of-cover and
+   spoil risk rather than a hand-authored reorder point, so the signal reflects actual demand.
+
+3. ANYCAST. A shortage is not broadcast to a planner; it is anycast to whichever nodes are holding
+   surplus. Holders claim it competitively — nearest branch first, nearest-expiry lot first, so the
+   stock most at risk of being written off moves first. The claimant proposes a transfer.
+
+4. CONFIRM. The rebalance coordinator confirms the transfer and writes it to shared state.
+
+5. NET, THEN BUY. Only the residual franchise-wide shortage escalates to #procurement as an RFQ.
+   Supplier agents bid with unit price and lead time; the lowest landed cost wins and becomes a
+   single purchase order for one human approval. This is the step that makes the system a decision
+   layer rather than a ledger: the group buys once, for what it genuinely does not have.
+
+6. CLEAR SURPLUS. In parallel, near-expiry stock that no branch needs is converted into a menu
+   promotion so it clears through demand instead of being written off.
+
+Why a mesh and not a solver. Each site holds its own local state and its own constraints, and the
+question "who can cover this, at what cost, before it spoils" is naturally a negotiation between
+holders rather than a single global optimisation. It also degrades correctly: a node that is offline
+simply does not claim, and the shortage still reaches procurement.
+
+Implementation. Coordination runs on Cotal (agent nodes, presence, channels, anycast). Reasoning
+runs as six capabilities — weekly_forecast, rebalance_and_procure, promotion_sweep,
+consumer_concierge, inventory_admin, menu_intelligence — exposed over an MCP bridge that mesh nodes
+call as tools, so the coordination layer and the reasoning layer stay separable. Shared state
+(inventory, transfers, RFQs, bids, purchase orders, forecasts) lives in Postgres. The
+multi-constraint rebalance and procurement decision runs on Claude Opus 5; forecasting and bulk
+extraction route to open-weights models on Nebius.
+
+Worked example, from the live system. Downtown is 36 kg short of tomatoes. Marina holds 34 kg
+against a par of 24, expiring in two days. Mission holds 16 kg but is itself below par, so it does
+not claim. Marina's claim wins; 10 kg moves branch to branch at zero purchase cost, rescuing stock
+that would have spoiled. Only the net 26 kg reaches procurement, where two suppliers bid — Bay Foods
+at $2.05 beats NorCal at $2.20 — producing one $53.30 purchase order for the owner to approve. One
+shortage in, one decision out.
+```
