@@ -19,6 +19,38 @@ For the founder to hold during questions. Dream AI Hackathon, 17:10.
 
 ---
 
+## 0. The question asked most often: "Where does the data come from?"
+
+Asked more than any other, by practitioners rather than investors. Answer it **before** it is asked —
+it is now on the solution slide. If it still comes:
+
+> Four sources, and all four already exist in the business. Sales come from the POS — Toast, Square,
+> Lightspeed — item level, per site, per day. Recipes are the bill-of-materials, entered once, which
+> is what turns "we sold two hundred and seventy-three of those" into "we consumed forty-one kilos of
+> this." Prices, lead times and receipts come off supplier invoices — distributor EDI where it exists,
+> invoice OCR where it doesn't. And on-hand comes from the counts they already do, which I carry with
+> a confidence band rather than as a fact.
+>
+> There is no new hardware and no new process. And the audit that opens the sale needs none of it
+> live — it runs on a POS export and ninety days of invoices, read-only. That is deliberate: I am not
+> asking a nine-site operator to start an IT project to find out whether I am worth $249.
+
+**If pressed on which is hardest:** on-hand, by a distance. Everything else is a clean read; on-hand
+is an estimate that drifts between counts. That is why the decision carries a confidence band and why
+a proposal only fires when the surplus clears it by a margin — the failure mode is a missed transfer,
+never a wrong one. Then hand off to Q3.
+
+**If pressed on integration effort:** POS APIs are the table-stakes build and they are why "cloud,
+API-accessible POS" is a disqualifying filter in the beachhead definition. A legacy on-premise POS
+turns onboarding into a services project and destroys the gross margin, so those operators are not
+the buyer.
+
+**Do not say** the data is clean, that this is solved, or that we replace their inventory system.
+Nobody rips out MarketMan — we write the transfer back as their native record so their COGS stays
+correct.
+
+---
+
 ## 1. The ten most likely questions
 
 Ranked by likelihood × damage if fumbled.
