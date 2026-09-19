@@ -28,9 +28,18 @@ Per the hackathon's reuse rule, stated plainly.
 - InsForge Postgres schema, the Trattoria Verde seed franchise, and the hosted three-view UI
 - The embodied extension — [Project-SCIM](https://github.com/abhijitbetigeri/Project-SCIM), a Unity 6 back-of-house simulation
 
+All of it is vendored into [`product/`](product/) so this repo runs from one link — see
+[product/PROVENANCE.md](product/PROVENANCE.md). **The boundary is the directory: `product/` is
+July, everything else is today.**
+
 **Built during the event (19 Sep 2026):**
 
-- *(in progress — this section is filled as the day's work lands)*
+- [`docs/market-research.md`](docs/market-research.md) — layered TAM with independent bottom-up triangulation, SAM and the 3–20 unit beachhead, competitive landscape, pricing with the ROI working, physical-AI feasibility assessment
+- [`model/financial_model.py`](model/financial_model.py) + [`docs/financial-model.md`](docs/financial-model.md) — a monthly cohort model to year 3: $3.24M ARR, 84% gross margin, 4.0-month CAC payback, 7.5× LTV/CAC
+- *(voice layer — in progress)*
+
+The git history is the evidence: this repository was created at 11:26 on 19 Sep 2026 and every
+commit is timestamped that day.
 
 The July system proved that agents *can* coordinate a restock. It had no answer for the only
 question an operator actually asks: **what is that worth, and what does it cost me?** That is what
@@ -61,9 +70,10 @@ without. That gap is the beachhead.
 ## Repo layout
 
 ```
-docs/market-research.md    TAM / SAM / SOM, competitive landscape, pricing, sources
-docs/financial-model.md    3-year P&L, unit economics, cash, assumption defences
-model/financial_model.py   the model itself — monthly cohort, all inputs at the top
+docs/market-research.md    TAM / SAM / SOM, competitive landscape, pricing, sources   ← today
+docs/financial-model.md    3-year P&L, unit economics, cash, assumption defences      ← today
+model/financial_model.py   the model itself — monthly cohort, all inputs at the top   ← today
+product/                   the July system, vendored — see product/PROVENANCE.md      ← pre-existing
 ```
 
 ## Related work
