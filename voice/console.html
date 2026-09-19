@@ -129,9 +129,10 @@
     <b>Two paths, deliberately.</b> The recorded clip plays from disk — identical every rehearsal and
     immune to venue wifi, which is what the stage needs. The live agent is what the judges' table
     needs: ten concurrent calls, so several people can interrogate it at once.<br><br>
-    <b>Setup:</b> create the agent at elevenlabs.io, set <b>Authentication → public</b>, allowlist this
-    domain, then replace <code>AGENT_ID_HERE</code> below. No API key ever reaches the browser — the
-    agent id is public by design. Render the clip with <code>voice/render_fallback.sh</code>.
+    <b>How it is wired.</b> The agent is published with authentication off and this domain on its
+    allowlist, with <b>Fail when Origin header is missing</b> enabled — so it answers this page and
+    refuses a bare <code>curl</code>. No API key ever reaches the browser; the agent id is public by
+    design, and the worst an abuser gets is our own call minutes.
   </p>
 
   <footer>
@@ -140,14 +141,15 @@
   </footer>
 </div>
 
-<!-- ElevenLabs conversational agent. Replace AGENT_ID_HERE; nothing else changes. -->
-<elevenlabs-convai agent-id="AGENT_ID_HERE" style="display:none"></elevenlabs-convai>
+<!-- ElevenLabs conversational agent. Public agent id — safe in page source; no key here. -->
+<elevenlabs-convai agent-id="agent_9301m2xnptxgezd9mtebyh2p4ezm" style="display:none"></elevenlabs-convai>
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 
 <script>
 const status = document.getElementById("status");
 const widget = document.querySelector("elevenlabs-convai");
-const configured = widget.getAttribute("agent-id") !== "AGENT_ID_HERE";
+// A real ElevenLabs agent id starts with "agent_"; anything else is an unfilled placeholder.
+const configured = /^agent_/.test(widget.getAttribute("agent-id") || "");
 
 // The recorded clip. Rendered by voice/render_fallback.sh; absent until then.
 const CLIP = "crosshaul-approval.mp3";
