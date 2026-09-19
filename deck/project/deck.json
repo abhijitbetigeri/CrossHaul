@@ -13,13 +13,14 @@
     "proof",
     "whynow",
     "market",
-    "competition",
     "model",
-    "gtm",
     "financials",
-    "team",
     "vision",
-    "ask"
+    "sponsors",
+    "ask",
+    "competition",
+    "gtm",
+    "team"
   ],
   "cover": "cover",
   "sections": {
@@ -28,20 +29,20 @@
       "start": "problem"
     },
     "s2": {
-      "description": "What CrossHaul decides, shown on one real shortage",
+      "description": "What CrossHaul decides, and on what data",
       "start": "solution"
     },
     "s3": {
-      "description": "Why the market is real, why now, and why the incumbents have not taken it",
+      "description": "Why the market is real and why now",
       "start": "whynow"
     },
     "s4": {
-      "description": "How it makes money and how it reaches the buyer",
+      "description": "How it makes money, what was built on sponsor tools, and the ask",
       "start": "model"
     },
     "s5": {
-      "description": "The team, the five-year view, and the ask",
-      "start": "team"
+      "description": "Appendix \u2014 competition, go-to-market and team, for questions",
+      "start": "competition"
     }
   },
   "faces": {
