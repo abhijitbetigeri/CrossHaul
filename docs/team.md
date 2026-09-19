@@ -176,7 +176,7 @@ conversation from finding them instead.
 
 ## Why me — the spoken line
 
-> I have shipped sixteen products in four months, and this is the one I came back to. I am
+> I am
 > not a restaurant person. I am a distributed systems person, and a group whose twelve branches
 > cannot see each other's inventory has a coordination problem, not a cooking problem. I know what I
 > am missing — an operator and a seller. Both are hires, both are dated, both are in the model. The
