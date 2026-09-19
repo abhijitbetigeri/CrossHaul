@@ -174,8 +174,8 @@ BUILT DURING THE HACKATHON (19 Sep 2026)
   evidence points that way.
 
 PRE-EXISTING, DISCLOSED — built July 2026 and vendored under product/ with a PROVENANCE file: the
-coordination mesh, six agent capabilities, the Postgres schema and the hosted UI, built July 2026.
-The boundary is a directory: product/ is July, everything else is
+coordination mesh, six agent capabilities, the Postgres schema and the hosted UI. The boundary is a
+directory: product/ is July, everything else is
 today. This repository was created at 11:26 on 19 Sep 2026 and every commit is timestamped that
 day.
 
