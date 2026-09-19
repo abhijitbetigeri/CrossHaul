@@ -17,10 +17,7 @@
     "financials",
     "vision",
     "sponsors",
-    "ask",
-    "competition",
-    "gtm",
-    "team"
+    "ask"
   ],
   "cover": "cover",
   "sections": {
@@ -39,10 +36,6 @@
     "s4": {
       "description": "How it makes money, what was built on sponsor tools, and the ask",
       "start": "model"
-    },
-    "s5": {
-      "description": "Appendix \u2014 competition, go-to-market and team, for questions",
-      "start": "competition"
     }
   },
   "faces": {

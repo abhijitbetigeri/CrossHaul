@@ -105,3 +105,80 @@ Per the reuse rule, the boundary is a directory:
 
 The July system proved agents *can* coordinate a restock. It had no answer for the only question an
 operator actually asks: **what is that worth, and what does it cost me?** That is what today built.
+
+---
+
+## Form field: Project Links
+
+```
+Pitch Deck: <paste the shared deck or Google Slides link>
+Live Demo: https://k3trn3a2.insforge.site
+  — voice approval channel: https://k3trn3a2.insforge.site/voice.html
+  — agent mesh negotiating: https://k3trn3a2.insforge.site/mesh.html
+  — site operations console: https://k3trn3a2.insforge.site/branch.html
+GitHub Repository: https://github.com/abhijitbetigeri/CrossHaul
+Robot simulation (playable): https://abhijitbetigeri.github.io/Project-SCIM/sim/
+```
+
+## Form field: Project Overview
+
+```
+Every site in a multi-site operation forecasts alone, orders alone, and writes off alone. There
+is no shared picture of what the business is holding, so one branch buys what another is days
+away from discarding. Waste runs 4-10% of everything purchased — around $72,000 per site per
+year, and $162B a year in US food service alone.
+
+CrossHaul is a Common Operating Environment for multi-site inventory. It forecasts demand per
+branch, explodes it through the recipe bill-of-materials, nets each shortage against surplus
+already held at other branches of the same franchise, and sends a supplier only the remainder —
+as one purchase order, for one human approval. Stock close to expiry is flagged for markdown
+rather than written off. Nothing moves without a person tapping accept.
+
+Target users: multi-site operators running 3-20 locations, clustered within driving distance of
+each other. The champion is whoever does the ordering; the owner signs. Food service is the
+beachhead, not the ceiling — the primitive applies wherever four conditions hold: multiple sites
+under one owner, stock that dates, site-level demand that varies independently, and a transfer
+that costs less than a purchase. FMCG manufacturing, grocery and pharmacy are structurally
+identical; none of them is built.
+```
+
+## Form field: AI & Hackathon Build
+
+```
+HOW IT USES AI — three layers, routed by reasoning complexity rather than by vendor.
+
+1. Coordination. Each branch and each supplier is an autonomous agent. A shortage posts to a
+shared channel and anycast routes it to the branches holding surplus; nearest branch and
+nearest-expiry lot claims it. Claude Opus 5 makes the multi-constraint decision — expiry windows,
+distance, supplier minimums, landed cost — and drafts the purchase order for approval.
+
+2. High-volume, low-reasoning work runs on open-weights models via Nebius Token Factory
+(openai/gpt-oss-120b, OpenAI-compatible API): per-SKU demand forecasting and bulk extraction of
+market data. This removes 83% of inference cost per location per month ($5.16 to $0.88), verified
+live — the forecast call costs 79x less there — while the one call that decides how money is spent
+stays on the frontier model. Code: inference/router.py.
+
+3. Operator dialogue runs on Claude Sonnet 5 behind an ElevenLabs conversational agent. The
+product calls the operator, states the decision it already made, and takes approval by voice,
+because the person who owns the stock is not sitting at a screen.
+
+BUILT DURING THE HACKATHON (19 Sep 2026)
+
+- The ElevenLabs voice approval channel: a published conversational agent, an embedded console at
+  /voice.html, and a TTS-rendered fallback clip that plays from disk so the demo cannot fail.
+- The Nebius inference router and its cost model, verified against the live API.
+- The entire commercial case, which the system previously had no answer for: layered TAM with an
+  independent bottom-up triangulation, a monthly-cohort three-year financial model, go-to-market
+  with seven ranked falsifiers and test dates, competitive analysis resolving what incumbents do
+  and do not do, and a physical-AI feasibility study that reaches negative conclusions where the
+  evidence points that way.
+
+PRE-EXISTING, DISCLOSED — built July 2026 and vendored under product/ with a PROVENANCE file: the
+coordination mesh, six agent capabilities, the Postgres schema and the hosted UI (SC-Intelligence,
+AGI Summit hackathon winner). The boundary is a directory: product/ is July, everything else is
+today. This repository was created at 11:26 on 19 Sep 2026 and every commit is timestamped that
+day.
+
+The July system proved agents can coordinate a restock. It had no answer for the only question an
+operator actually asks: what is that worth, and what does it cost me. That is what today built.
+```
