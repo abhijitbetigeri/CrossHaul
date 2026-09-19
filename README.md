@@ -62,6 +62,8 @@ without. That gap is the beachhead.
 
 ```
 docs/market-research.md    TAM / SAM / SOM, competitive landscape, pricing, sources
+docs/financial-model.md    3-year P&L, unit economics, cash, assumption defences
+model/financial_model.py   the model itself — monthly cohort, all inputs at the top
 ```
 
 ## Related work
