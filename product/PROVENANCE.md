@@ -3,7 +3,7 @@
 **Everything in this directory pre-dates the Dream AI Hackathon.**
 
 It is a snapshot of [SC-Intelligence](https://github.com/abhijitbetigeri/SC-Intelligence), built
-July 2026 for the AGI Summit hackathon, where it won. It is vendored here so the submission is one
+July 2026. It is vendored here so the submission is one
 self-contained repo that a judge can read and run from a single link — not to present it as work
 done on 19 Sep 2026.
 

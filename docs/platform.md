@@ -41,7 +41,7 @@ network position, and the approval surface do not.
 
 | Sector | Stock that dates | Sector-specific layer | Status |
 |---|---|---|---|
-| **Food service** | Ingredients, shelf life in days | Recipe bill-of-materials | **Built, live, won AGI Summit 2026** |
+| **Food service** | Ingredients, shelf life in days | Recipe bill-of-materials | **Built and live** |
 | FMCG manufacturing | Raw materials, WIP, batch expiry | Production schedule + BOM | Adjacent — structurally the same shape |
 | Grocery / convenience | Dated SKUs, high cardinality | Category hierarchy | Nearest adjacency |
 | Specialty food, bakery | Very short shelf life | Production planning | Most natural second vertical |
@@ -112,7 +112,7 @@ these documents.
 
 All four conditions hold at their sharpest — shelf life measured in days rather than months, demand
 that swings by day of week and site, and transfers across a city rather than a country. It is also
-where the product is built, live, and has already been judged against other teams and won.
+where the product is built and live.
 
 The vertical is **Mise**. Its market, pricing, unit economics and go-to-market are worked in full:
 

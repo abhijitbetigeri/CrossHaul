@@ -3,7 +3,7 @@
 > *"Mise en place"* — everything in its place, ready before service. The product keeps the
 > right ingredients in the right branch at the right time, driven by real customer demand.
 
-AGI Summit 2026 Hackathon · Vertical AI + Multi-Agent System
+Vertical AI + Multi-Agent System
 
 This is the **as-built** architecture. For exhaustive resource IDs and run commands see
 [../runtype/BUILD.md](../runtype/BUILD.md) (Runtype), [../INSFORGE.md](../INSFORGE.md) (backend),

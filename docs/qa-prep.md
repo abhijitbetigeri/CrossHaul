@@ -115,7 +115,7 @@ year-three conversation, entered from below once there are references — not th
 rough honest one. What follows is only the shape.
 
 What is true and usable: you have shipped sixteen products in four months and *this* is the one you
-came back to. You won with it in July and returned to it in September — not with another prototype,
+came back to. You built it in July and returned to it in September — not with another prototype,
 but to build the commercial case. That pattern is the evidence; say the thing underneath it.
 
 The strongest structure is three beats, under thirty seconds:
@@ -333,7 +333,7 @@ The one judge who can read the engineering. She will go at one of the two claims
 
 **"You're solo. Why you, and what do you do about the bus factor?"**
 
-> I've shipped sixteen products in four months, and I won a hackathon in July with this one. I'm not a restaurant person. I'm a distributed systems person, and a group whose twelve branches can't see each other's inventory has a coordination problem, not a cooking problem. I know what I'm missing — an operator and a seller. Both are hires, both are dated, both are in the model. The bus factor is real and it's partly why the founding engineer is hire one and starts at month three. And I'm recruiting two advisors with actual terms — a five-to-twenty-unit operator and a food distribution executive, quarter to half a point each, monthly call and one intro a quarter. A logo on an advisor slide is worth nothing.
+> I've shipped sixteen products in four months, and this is the one I came back to. I'm not a restaurant person. I'm a distributed systems person, and a group whose twelve branches can't see each other's inventory has a coordination problem, not a cooking problem. I know what I'm missing — an operator and a seller. Both are hires, both are dated, both are in the model. The bus factor is real and it's partly why the founding engineer is hire one and starts at month three. And I'm recruiting two advisors with actual terms — a five-to-twenty-unit operator and a food distribution executive, quarter to half a point each, monthly call and one intro a quarter. A logo on an advisor slide is worth nothing.
 
 `docs/team.md` "Why me", Advisors.
 

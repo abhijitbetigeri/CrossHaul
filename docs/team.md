@@ -7,7 +7,7 @@
 ## The case, stated directly
 
 The strongest argument is not the résumé. It is that this exact product has already been built,
-already been judged against other teams, and already won — at the AGI Summit in July 2026, as
+already been built and deployed — in July 2026, as
 [SC-Intelligence](https://github.com/abhijitbetigeri/SC-Intelligence). Today's repository extends
 that system rather than introducing it. A panel is not being asked to believe a solo founder *could*
 ship this. It already shipped, and the mesh is live at a URL.
@@ -67,7 +67,7 @@ in-progress rather than proven.
 
 | Claim in the deck | What backs it |
 |---|---|
-| Agents can coordinate a multi-branch restock | Built and judged: AGI Summit 2026 winner, same product |
+| Agents can coordinate a multi-branch restock | Built and deployed July 2026, the same product |
 | Distributed coordination is tractable at 3–20 branches | NDN/NS-3, SDN, Emulab, JOS hypervisor — the 2014 foundation |
 | Forecast → BOM explosion → net shortage is a real pipeline | Six Runtype capabilities and an InsForge Postgres schema, live |
 | Physical AI is the extension, not a slogan | [Project-SCIM](https://github.com/abhijitbetigeri/Project-SCIM), a Unity 6 back-of-house simulation in which a robot executes the transfer and emits demonstration data |
@@ -176,7 +176,7 @@ conversation from finding them instead.
 
 ## Why me — the spoken line
 
-> I have shipped sixteen products in four months, and I won a hackathon in July with this one. I am
+> I have shipped sixteen products in four months, and this is the one I came back to. I am
 > not a restaurant person. I am a distributed systems person, and a group whose twelve branches
 > cannot see each other's inventory has a coordination problem, not a cooking problem. I know what I
 > am missing — an operator and a seller. Both are hires, both are dated, both are in the model. The

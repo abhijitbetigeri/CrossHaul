@@ -142,8 +142,7 @@ is why batching onto trips that already exist is the lever. Both are worked thro
 Per the hackathon's reuse rule — **the boundary is a directory.**
 
 **Pre-existing** — [`product/`](product/), built July 2026 as
-[SC-Intelligence](https://github.com/abhijitbetigeri/SC-Intelligence), winner of the AGI Summit
-hackathon: the coordination mesh, six agent capabilities, the Postgres schema and the hosted UI. See
+[SC-Intelligence](https://github.com/abhijitbetigeri/SC-Intelligence), built July 2026: the coordination mesh, six agent capabilities, the Postgres schema and the hosted UI. See
 [`product/PROVENANCE.md`](product/PROVENANCE.md).
 
 **Built 19 September 2026** — everything else. This repository was created at **11:26 that morning**

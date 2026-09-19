@@ -1,6 +1,6 @@
 # Agent Mesh for Zero Waste
 
-### How we built a restaurant supply chain that restocks itself — and won AGI Summit 2026
+### How we built a restaurant supply chain that restocks itself
 
 Somewhere right now, a restaurant is throwing out a case of tomatoes that are about to turn.
 Two miles away, another branch of the *same franchise* just 86'd the marinara because it ran out.
@@ -125,7 +125,7 @@ the Cotal mesh is the coordination design plus a working connector, and the cons
 replays the negotiation. We were careful to say exactly that on stage: model the branches as agents,
 run the reasoning live, and don't claim more than is true.
 
-It won the **Multi-Agent Systems & Coordination** track at AGI Summit 2026. But the reason we're
+It shipped as a working multi-agent coordination system. But the reason we're
 proud of it isn't the trophy — it's that the interesting frontier in agents right now isn't a
 smarter single model. It's *coordination*: getting many autonomous, partially-informed agents to
 produce a good collective decision without a central brain. A restaurant supply chain turned out to
