@@ -75,7 +75,7 @@ margin from 76% to 84%.*
 | ↳ site operations | https://k3trn3a2.insforge.site/branch.html |
 | **GitHub** | https://github.com/abhijitbetigeri/CrossHaul |
 | Embodied simulation | https://abhijitbetigeri.github.io/Project-SCIM/ |
-| Prior system (July) | https://github.com/abhijitbetigeri/SC-Intelligence |
+| Pre-existing codebase | https://github.com/abhijitbetigeri/SC-Intelligence |
 
 ---
 
@@ -95,7 +95,7 @@ the ceiling.
 
 Per the reuse rule, the boundary is a directory:
 
-- **`product/`** — the July 2026 system (SC-Intelligence, AGI Summit winner): the coordination mesh,
+- **`product/`** — the July 2026 codebase: the coordination mesh,
   six agent capabilities, the Postgres schema and the hosted UI. Pre-existing. See
   [`product/PROVENANCE.md`](product/PROVENANCE.md).
 - **Everything else** — built 19 Sep 2026. The repository was created at 11:26 that morning and
@@ -103,8 +103,8 @@ Per the reuse rule, the boundary is a directory:
   go-to-market, competitive analysis, the physical-AI feasibility study, the ElevenLabs voice
   channel, and the Nebius inference router.
 
-The July system proved agents *can* coordinate a restock. It had no answer for the only question an
-operator actually asks: **what is that worth, and what does it cost me?** That is what today built.
+The earlier codebase could coordinate a restock. It had no answer for the only question an operator
+actually asks: **what is that worth, and what does it cost me?** That is what today built.
 
 ---
 
@@ -174,13 +174,13 @@ BUILT DURING THE HACKATHON (19 Sep 2026)
   evidence points that way.
 
 PRE-EXISTING, DISCLOSED — built July 2026 and vendored under product/ with a PROVENANCE file: the
-coordination mesh, six agent capabilities, the Postgres schema and the hosted UI (SC-Intelligence,
-AGI Summit hackathon winner). The boundary is a directory: product/ is July, everything else is
+coordination mesh, six agent capabilities, the Postgres schema and the hosted UI, built July 2026.
+The boundary is a directory: product/ is July, everything else is
 today. This repository was created at 11:26 on 19 Sep 2026 and every commit is timestamped that
 day.
 
-The July system proved agents can coordinate a restock. It had no answer for the only question an
-operator actually asks: what is that worth, and what does it cost me. That is what today built.
+The earlier codebase could coordinate a restock. It had no answer for the only question an operator
+actually asks: what is that worth, and what does it cost me. That is what today built.
 ```
 
 ## Form field addendum: the multi-agent coordination, in detail
