@@ -88,9 +88,12 @@ three per quarter after a slow start, founder-led. The aggressive-looking year i
 two AEs at ~5 groups/month each, which is ordinary mid-market productivity at a $19K ACV.
 
 **"Why won't MarketMan just build this?"** They ship inter-location transfers already — as
-bookkeeping, gated to Enterprise. Making the *decision* needs a continuous per-SKU demand forecast
-their transaction-and-periodic-count data model doesn't produce. It is an architecture change, not a
-feature ticket. (Full working in [market-research.md](market-research.md).)
+bookkeeping, gated to Enterprise from $449 while Starter is $249. **Do not claim their data model
+cannot forecast** — depleting theoretical on-hand from POS against recipe cards is standard, and a
+judge who knows the category will say so. The defensible gap is three-part: no confidence interval
+on on-hand, no write-side network object to optimise against, and no above-store workflow surface.
+(Full working in [competition.md](competition.md) §6.1; the retraction is logged in
+[../CLAUDE.md](../CLAUDE.md) §3.)
 
 **"Where does churn really land?"** Honestly: unknown, because there are no customers yet. 1.0–1.5%
 monthly is the industry-shaped estimate. If it lands at 2.5%, LTV/CAC falls to ~4× — still viable,

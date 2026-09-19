@@ -263,7 +263,7 @@
 <script
   src="https://cdn.runtype.com/persona/latest/install.global.js"
   data-runtype-token="ct_live_01kxvyhr_2055537660436c1136d1cf9c01917237"
-  data-config='{"apiUrl":"https://api.runtype.com","windowKey":"miseChat","colorScheme":"auto","launcher":{"enabled":true,"title":"Inventory Admin","subtitle":"Stock, projections & reorders","position":"bottom-right"},"theme":{"components":{"header":{"background":"var(--tomato)","titleForeground":"#ffffff","subtitleForeground":"#ffe9e2"},"launcher":{"background":"var(--tomato)","foreground":"#ffffff"}}}}'
+  data-config='{"apiUrl":"https://api.runtype.com","windowKey":"miseChat","colorScheme":"auto","launcher":{"enabled":true,"title":"Inventory Admin","subtitle":"Stock, projections & reorders","position":"bottom-left"},"theme":{"components":{"header":{"background":"var(--tomato)","titleForeground":"#ffffff","subtitleForeground":"#ffe9e2"},"launcher":{"background":"var(--tomato)","foreground":"#ffffff"}}}}'
 ></script>
 
 <!-- ── Data + logic ───────────────────────────────────────────────────── -->
@@ -442,6 +442,13 @@ window.addEventListener("persona:chat-ready",e=>{ window.miseChat=e.detail; });
 
 render("downtown");
 </script>
+<!-- ── CrossHaul voice agent (ElevenLabs) ──────────────────────────────
+     Public agent id — safe in page source, carries no privileged access. No API
+     key reaches the browser. Launcher sits bottom-right; Persona was moved to
+     bottom-left above so the two do not overlap. -->
+<elevenlabs-convai agent-id="agent_9301m2xnptxgezd9mtebyh2p4ezm"></elevenlabs-convai>
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
 <script>(function(){var r=document.documentElement,b=document.getElementById("themeBtn");if(!b)return;function cur(){return r.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");}function ico(){b.textContent=cur()==="light"?"☾":"☀";}ico();b.addEventListener("click",function(){var n=cur()==="light"?"dark":"light";r.setAttribute("data-theme",n);try{localStorage.setItem("mise-theme",n);}catch(e){}ico();});})();</script>
 </body>
 </html>

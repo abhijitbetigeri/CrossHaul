@@ -1,0 +1,20 @@
+{
+  "v": 4,
+  "createdOnFiles": { "v": 1, "at": "2026-09-19T20:55:00Z" },
+  "title": "CrossHaul",
+  "order": ["cover","problem","solution","proof","whynow","market","competition","model","gtm","financials","team","vision","ask"],
+  "cover": "cover",
+  "sections": {
+    "s1": { "description": "The problem every multi-site operator has and nobody sells them a fix for", "start": "problem" },
+    "s2": { "description": "What CrossHaul decides, shown on one real shortage", "start": "solution" },
+    "s3": { "description": "Why the market is real, why now, and why the incumbents have not taken it", "start": "whynow" },
+    "s4": { "description": "How it makes money and how it reaches the buyer", "start": "model" },
+    "s5": { "description": "The team, the five-year view, and the ask", "start": "team" }
+  },
+  "faces": {
+    "fraunces": { "family": "Fraunces", "href": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" },
+    "ibm-plex-sans": { "family": "IBM Plex Sans", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" },
+    "ibm-plex-mono": { "family": "IBM Plex Mono", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" }
+  },
+  "designSystems": []
+}

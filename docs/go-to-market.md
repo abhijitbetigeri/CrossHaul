@@ -666,8 +666,10 @@ the positioning and it keeps the wedge intact.
 **The claim.** A six-unit operator cannot buy automated transfers at mid-market pricing today.
 
 **Why it matters.** Half the differentiation is a pricing gap, and a pricing gap can be closed with a
-pricing page. The other half — that their transaction-and-periodic-count data model does not produce
-the continuous per-SKU forecast a *decision* requires — survives, but it is the harder half to sell.
+pricing page. The other half survives — but state it correctly: *not* that their data model cannot
+forecast (it can; actual-vs-theoretical depletion is standard), but that they carry no confidence
+interval on on-hand, no write-side network object to optimise against, and no above-store workflow
+surface. See [competition.md](competition.md) §6.1.
 
 **Test.** Continuous monitoring of MarketMan's tier structure.
 
