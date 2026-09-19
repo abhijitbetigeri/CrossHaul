@@ -36,7 +36,11 @@ July, everything else is today.**
 
 - [`docs/market-research.md`](docs/market-research.md) — layered TAM with independent bottom-up triangulation, SAM and the 3–20 unit beachhead, competitive landscape, pricing with the ROI working, physical-AI feasibility assessment
 - [`model/financial_model.py`](model/financial_model.py) + [`docs/financial-model.md`](docs/financial-model.md) — a monthly cohort model to year 3: $3.24M ARR, 84% gross margin, 4.0-month CAC payback, 7.5× LTV/CAC
-- *(voice layer — in progress)*
+- [`docs/go-to-market.md`](docs/go-to-market.md) — beachhead filters, channel ranking, the paid Cross-Branch Waste Audit wedge, 90-day plan, and seven ranked falsifiers with test dates
+- [`docs/team.md`](docs/team.md) — the solo-founder case, dated hiring plan reconciled to the model, and the honest gaps
+- [`docs/vision.md`](docs/vision.md) — impact quantified (931 tons of food, ~4,740 t CO2e at year 3), the data moat, and the physical-AI arc correctly bounded
+- [`docs/elevenlabs-integration.md`](docs/elevenlabs-integration.md) — the voice layer: requirements, paste-ready agent prompt, fallback path
+- *(voice layer — implementation in progress)*
 
 The git history is the evidence: this repository was created at 11:26 on 19 Sep 2026 and every
 commit is timestamped that day.
