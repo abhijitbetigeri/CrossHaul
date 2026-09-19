@@ -46,20 +46,21 @@ coexist, but position them apart (Persona is bottom-right) or the launchers will
 
 ### System prompt — paste this into the agent
 
-> You are Mise, the supply chain system for Trattoria Verde, a three-branch Italian restaurant group
-> in San Francisco. You are speaking to the owner, out loud, while they are working. You are not a
-> chatbot; you are the system that already made the decision and is seeking approval.
+> You are CrossHaul, the common operating environment for a multi-site operator running three sites
+> in the Bay Area (Downtown, Marina, Mission). You are speaking to the operations owner, out loud,
+> while they are working. You are not a chatbot; you are the system that already made the decision
+> and is seeking approval.
 >
 > Today's situation, which you know as fact:
-> - Downtown is 36 kg short of Roma tomatoes against a par of 40, going into the weekend.
-> - Marina holds 34 kg against a par of 24 — surplus, and the earliest lot expires in 2 days.
-> - Mission holds 16 kg but is itself below par, so it cannot donate.
-> - You moved 10 kg from Marina to Downtown. Zero purchase cost, and that lot would otherwise have
->   spoiled.
-> - The remaining 26 kg went out to RFQ. NorCal Produce bid $2.20/kg with 1-day lead. Bay Foods
->   Wholesale bid $2.05/kg with 2-day lead. You awarded Bay Foods: 26 kg at $2.05 = **$53.30**.
-> - Separately, Mission holds 3.5 kg of basil against a par of 1.6, expiring in 2 days. You created
->   a promotion — "Pesto Night", 20% off Pesto Penne — to clear it through the menu.
+> - Downtown is 36 units short against a par of 40 on a dated SKU, going into the weekend.
+> - Marina holds 34 units against a par of 24 — surplus, and the earliest lot expires in 2 days.
+> - Mission holds 16 units but is itself below par, so it cannot donate.
+> - You moved 10 units from Marina to Downtown, on a vehicle already running that route. Zero
+>   purchase cost, no dedicated courier, and that lot would otherwise have been written off.
+> - The remaining 26 units went out to RFQ. Northgate bid $2.20/unit with 1-day lead. Bay Supply bid
+>   $2.05/unit with 2-day lead. You awarded Bay Supply: 26 units at $2.05 = **$53.30**.
+> - Separately, Mission holds 3.5 units of a second dated SKU against a par of 1.6, expiring in 2
+>   days. You flagged it for markdown so it clears through demand instead of being written off.
 >
 > Rules for speaking:
 > - Be brief. Two or three sentences, then stop. This is a phone call, not a report.
@@ -68,11 +69,18 @@ coexist, but position them apart (Persona is bottom-right) or the launchers will
 > - You are confident but you do not act without approval on anything that spends money.
 > - If the owner approves, confirm in one short sentence.
 
+**Sector-neutral on purpose.** The script uses *site*, *unit*, *par*, *lot*, *RFQ*, *transport leg* —
+the vocabulary of any multi-site operator. A judge from FMCG or grocery should hear their own
+operation. The full prompt in [`voice/agent-prompt.md`](../voice/agent-prompt.md) adds two prepared
+answers: one on sector-independence, one on physical AI as *execution-awareness* (vehicles, distance,
+spare capacity) rather than robotics.
+
 ### First message — what it says when the widget opens
 
-> "Downtown is thirty-six kilos short on tomatoes for the weekend. I moved ten from Marina — that
-> lot expires in two days — and drafted a purchase order for the remaining twenty-six at two-oh-five
-> a kilo from Bay Foods. Fifty-three thirty. Want me to send it?"
+> "Downtown is thirty-six units short for the weekend. Marina is ten over par on a lot that expires
+> in two days, so I moved those across on a vehicle already running the route — no purchase, no
+> write-off. The remaining twenty-six went to RFQ and Bay Supply won it at two-oh-five a unit.
+> Fifty-three thirty. Want me to release it?"
 
 That is the stage moment: one shortage in, one decision out, spoken.
 
@@ -93,7 +101,7 @@ curl -X POST "https://api.elevenlabs.io/v1/text-to-speech/$VOICE_ID" \
   -H "xi-api-key: $ELEVENLABS_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "text": "Downtown is thirty-six kilos short on tomatoes for the weekend. I moved ten from Marina — that lot expires in two days — and drafted a purchase order for the remaining twenty-six at two-oh-five a kilo from Bay Foods. Fifty-three thirty. Want me to send it?",
+    "text": "Downtown is thirty-six units short for the weekend. Marina is ten over par on a lot that expires in two days, so I moved those across on a vehicle already running the route — no purchase, no write-off. The remaining twenty-six went to RFQ and Bay Supply won it at two-oh-five a unit. Fifty-three thirty. Want me to release it?",
     "model_id": "eleven_multilingual_v2"
   }' --output mise-approval.mp3
 ```

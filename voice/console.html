@@ -94,26 +94,26 @@
   </header>
 
   <p class="lede">
-    Site managers are on their feet for ten hours. They do not open dashboards — which is the real
-    failure mode of this category, not features. So CrossHaul <b>calls them</b>, states the decision
-    it already made, and takes "yes" for an answer.
+    Whether it is a plant floor or a back-of-house, the person who owns the stock is not at a screen.
+    They do not open dashboards — which is the real failure mode of this category, not features. So
+    CrossHaul <b>calls them</b>, states the decision it already made, and takes "yes" for an answer.
   </p>
 
   <div class="call">
-    <div class="head"><span class="pulse"></span> Incoming · CrossHaul → Owner · Trattoria Verde</div>
+    <div class="head"><span class="pulse"></span> Incoming · CrossHaul → Operations owner · 3-site cluster</div>
     <div class="body">
       <p class="said">
-        "Downtown is <em>thirty-six kilos short</em> on tomatoes for the weekend. I moved ten from
-        Marina — that lot expires in two days — and drafted a purchase order for the remaining
-        twenty-six at two-oh-five a kilo from Bay Foods. <em>Fifty-three thirty.</em>
-        Want me to send it?"
+        "Downtown is <em>thirty-six units short</em> for the weekend. Marina is ten over par on a lot
+        that expires in two days, so I moved those across on a vehicle already running the route — no
+        purchase, no write-off. The remaining twenty-six went to RFQ and Bay Supply won it at
+        two-oh-five a unit. <em>Fifty-three thirty.</em> Want me to release it?"
       </p>
 
       <dl class="ledger">
-        <dt>Purchase avoided — 10&nbsp;kg moved from Marina</dt><dd class="good">+$20.50</dd>
-        <dt>Spoilage avoided — Marina lot, 2 days to expiry</dt><dd class="good">+$20.50</dd>
-        <dt>RFQ won — Bay Foods $2.05 vs incumbent $2.20</dt><dd class="good">+$3.90</dd>
-        <dt>Courier leg — 10&nbsp;kg, intra-city</dt><dd>−$4.00</dd>
+        <dt>Purchase avoided — 10 units moved from Marina</dt><dd class="good">+$20.50</dd>
+        <dt>Write-off avoided — Marina lot, 2 days to expiry</dt><dd class="good">+$20.50</dd>
+        <dt>RFQ won — Bay Supply $2.05 vs incumbent $2.20</dt><dd class="good">+$3.90</dd>
+        <dt>Transport leg — 10 units on a vehicle already routed</dt><dd>−$4.00</dd>
         <dt class="tot">Net, this decision</dt><dd class="tot good">+$40.90</dd>
       </dl>
     </div>
@@ -126,6 +126,13 @@
   <div id="status"></div>
 
   <p class="note">
+    <b>Why the call says "units", not a commodity.</b> The primitive is sector-independent: it holds
+    wherever multiple sites sit under one owner, stock dates, site demand varies independently, and a
+    transfer costs less than a purchase. Food service is the vertical deployed, not the ceiling.
+    The transfer above is chosen by an <b>execution-aware</b> decision — vehicles, distance and spare
+    capacity, not quantities alone. That is where the physical AI sits: as intra-city autonomy takes a
+    10-unit leg from ~$7 to ~$2, more transfers turn positive. Beneficiary of that autonomy, not a
+    producer of it.<br><br>
     <b>Two paths, deliberately.</b> The recorded clip plays from disk — identical every rehearsal and
     immune to venue wifi, which is what the stage needs. The live agent is what the judges' table
     needs: ten concurrent calls, so several people can interrogate it at once.<br><br>

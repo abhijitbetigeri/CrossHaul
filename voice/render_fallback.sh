@@ -18,7 +18,7 @@ set -euo pipefail
 VOICE_ID="${1:-JBFqnCBsd6RMkjVDRZzb}"   # "George" — calm, low-affect, reads as infrastructure
 OUT="voice/crosshaul-approval.mp3"
 
-LINE="Downtown is thirty-six kilos short on tomatoes for the weekend. I moved ten from Marina — that lot expires in two days — and drafted a purchase order for the remaining twenty-six at two-oh-five a kilo from Bay Foods. Fifty-three thirty. Want me to send it?"
+LINE="Downtown is thirty-six units short for the weekend. Marina is ten over par on a lot that expires in two days, so I moved those across on a vehicle already running the route — no purchase, no write-off. The remaining twenty-six went to RFQ and Bay Supply won it at two-oh-five a unit. Fifty-three thirty. Want me to release it?"
 
 mkdir -p voice
 
